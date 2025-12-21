@@ -32,22 +32,41 @@ class Pet:
         self.adopted = bool(adopted)
     
 def show_menu():
+    """
+
+    """
     print()
 
 def add_pet():
-    print()
+    """
+
+    """
+    global next_pet
+    print("Paperwork for New Arrivals:\n")
+    name = input("Pet name: ")
+    type = input("Pet Type: ")
+    age = input("Pet age: ")
+    pet = Pet(next_pet, name, type, age, False)
+    pets.append(pet)
+    next_pet += 1
 
 def list_pets():
+    """
+
+    """
     print()
 
 def adopt_pet():
+    """
+
+    """
     print()
 
 def main():
     """
 
     """
-    print("Done!")
+    add_pet()
 
 if __name__ == "__main__":
     main()
