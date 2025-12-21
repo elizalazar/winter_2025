@@ -4,12 +4,12 @@ Winter 2025 Project
 Ideas:
  - To-do list
  - Game
-   --> Number Guessing
-   --> Memory Matching
-   --> Animal/Musician Guessing
+    -  Number Guessing
+    -  Memory Matching
+    -  Animal/Musician Guessing
  - Library Management
-   --> Books
-   --> Music
+   - Books
+   - Music
  - Password Strength Checker
  - Pet Adoption Management
  - Animal Shelter Database
