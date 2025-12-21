@@ -5,15 +5,15 @@ Ideas:
  - To-do list
  - Game
     -  Guessing
-     - Number
-     - Animal (|)
-     - Music (|)
+       - Number
+       - Animal ( | )
+       - Music ( | )
     -  Memory Matching
- - Library Management (|)
+ - Library Management ( | )
    - Books
-   - Music (|)
+   - Music ( | )
  - Password Strength Checker
- - Pet Adoption Management (||||)
- - Animal Shelter Database (|||)
- - Wildlife Observation Logger (|||)
- - Song Recommendation Tool (||)
+ - Pet Adoption Management ( |||| )
+ - Animal Shelter Database ( ||| )
+ - Wildlife Observation Logger ( ||| )
+ - Song Recommendation Tool ( || )
