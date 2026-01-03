@@ -122,8 +122,23 @@ def adopt_pet():
     """
     Allows for the 'adoption' of pets.
     """
-    print("Adopt\n")
-    show_menu()
+    print("Adoption\n")
+    global next_pet
+    global pets
+    check_id = int(input("Please enter the ID of the pet (that follow 8912) you would like to adopt: "))
+    while (check_id not in range(1, next_pet)):
+        check_id = int(input("\nSorry, that's invalid. Please enter the ID of the pet (that follow 8912) you would like to see details of: "))
+    confirm = input("\nAre you sure you are ready to adopt? (Y/N): ")
+    if (confirm == "N"):
+        print("So sorry to hear that. We hope to see you again soon.\n")
+        show_menu()
+    elif (confirm == "Y"):
+        print(f"Congratulations! You've adopted {pets[check_id-1].name}\n")
+        pets[check_id-1].adopted = True
+        show_menu()
+    else:
+        print("It seems you need to reevalute some choices, as that was invalid input.\n")
+        show_menu()
 
 def main():
     """
