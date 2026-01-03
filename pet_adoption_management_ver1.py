@@ -12,7 +12,7 @@ next_pet = 1
 
 class Pet:
     """
-    
+    class Pet dictates an object that represents a pet in real life.
     """
     def __init__(self, pet_id, name, type, age, adopted):
         """
@@ -23,7 +23,7 @@ class Pet:
         age: type int - recorded age
         adopted: type boolean - whether pet has been adopted
 
-
+        Initializes the attributes of class Pet.
         """
         self.pet_id = int(pet_id)
         self.name = str(name)
@@ -32,11 +32,21 @@ class Pet:
         self.adopted = bool(adopted)
     
     def __str__(self):
-        return f"Name: {self.name}\n Type: {self.type}\n Age: {self.age}\n Status: {self.adopted}\n Pet ID: {self.pet_id}0000\n"
-    
+        """
+        self: instance of class (itself)
+
+        Produces a string representation of class Pet.
+        """
+        if (self.adopted == True):
+            status = "Adopted"
+        else:
+            status = "Available"
+        return f"Name: {self.name}\n Type: {self.type}\n Age: {self.age}\n Status: {status}\n Pet ID: {self.pet_id}0000\n"
+        
+
 def show_menu():
     """
-
+    Shows the 'start' menu with potential options of what to do.
     """
     invalid = True;
     print("Welcome to Pet Adoption Centre!\n")
@@ -65,21 +75,25 @@ def show_menu():
 
 def add_pet():
     """
-
+    Adds pets, with proper name, type, and age to the system.
     """
     global next_pet
     print("\nPaperwork for New Arrivals:\n")
+    print("If you would like to cancel, leave one of the arguments blank.\n")
     name = input("Pet name: ")
     type = input("Pet Type: ")
     age = input("Pet age: ")
-    pet = Pet(next_pet, name, type, age, False)
-    pets.append(pet)
-    next_pet += 1
-    show_menu()
+    if (name == "" or type == "" or age == ""):
+        show_menu()
+    else:
+        pet = Pet(next_pet, name, type, age, False)
+        pets.append(pet)
+        next_pet += 1
+        show_menu()
 
 def list_pets():
     """
-
+    Lists all pets, both available an adopted.
     """
     print("\nCurrent Adoptables:\n")
     global next_pet
@@ -103,13 +117,14 @@ def list_pets():
 
 def adopt_pet():
     """
-
+    Allows for the 'adoption' of pets.
     """
     print("Adopt\n")
+    show_menu()
 
 def main():
     """
-
+    The main function of the program.
     """
     show_menu()
 
