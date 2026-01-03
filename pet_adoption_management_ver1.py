@@ -41,7 +41,7 @@ class Pet:
             status = "Adopted"
         else:
             status = "Available"
-        return f"Name: {self.name}\n Type: {self.type}\n Age: {self.age}\n Status: {status}\n Pet ID: {self.pet_id}0000\n"
+        return f"Name: {self.name}\nType: {self.type}\nAge: {self.age}\nStatus: {status}\nPet ID: 8912{self.pet_id}\n"
         
 
 def show_menu():
@@ -103,17 +103,20 @@ def list_pets():
         print(pet)
     print("What would you like to do?")
     print("1. Go back to menu")
-    print("2. View specific pet (Under construction)")
+    print("2. View specific pet")
     choice = int(input("What would you like to do? "))
     while (invalid):
         if (choice == 1):
             invalid = False
             show_menu()
         elif (choice == 2):
-            choice = int(input("Sorry, that feature is currently unavailable. What would you like to do? "))
+            check_id = int(input("\nPlease enter the ID of the pet (that follow 8912) you would like to see details of: "))
+            while (check_id not in range(1, next_pet)):
+                check_id = int(input("\nSorry, that's invalid. Please enter the ID of the pet (that follow 8912) you would like to see details of: "))
+            print(f"{pets[check_id-1]}\n")
+            choice = int(input("What would you like to do? "))
         else:
             choice = int(input("Sorry, we didn't quite get that. What would you like to do? "))
-
 
 def adopt_pet():
     """
